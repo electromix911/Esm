@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Día de la Mujer Esme</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+background: linear-gradient(135deg,#ff6a88,#ff99ac);
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+/* contenedor principal */
+
+.container{
+position:relative;
+top:50%;
+transform:translateY(-50%);
+}
+
+/* titulo */
+
+h1{
+font-size:45px;
+margin-bottom:10px;
+animation:fade 2s ease;
+}
+
+/* foto */
+
+img{
+width:260px;
+height:260px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid white;
+box-shadow:0 0 25px rgba(255,255,255,0.8);
+animation:flotar 3s infinite ease-in-out;
+}
+
+/* texto */
+
+.texto{
+margin-top:20px;
+font-size:22px;
+width:75%;
+margin-left:auto;
+margin-right:auto;
+animation:fade 3s ease;
+}
+
+/* corazones */
+
+.heart{
+position:absolute;
+color:red;
+font-size:25px;
+animation:subir 6s linear infinite;
+}
+
+/* animaciones */
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes flotar{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes subir{
+0%{
+bottom:-50px;
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+bottom:100%;
+opacity:0;
+}
+}
+
+.footer{
+margin-top:25px;
+font-size:26px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌸 Feliz Día de la Mujer 🌸</h1>
+
+<!-- CAMBIA ESTE LINK POR SU FOTO -->
+<img src="https://i.imgur.com/ejemplo.jpg">
+
+<div class="texto">
+Me gusta como eres…  
+divertida, un poco loca, alegre y con esa forma tan única de ver la vida.  
+Eres de esas personas que contagian sonrisas y hacen que todo sea más bonito.
+</div>
+
+<div class="footer">
+✨ Feliz día Esme, a una gran mujer ✨  
+<br>
+🌷 Futura Ingeniera 🌷
+</div>
+
+</div>
+
+<script>
+
+/* corazones flotando */
+
+function crearCorazon(){
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+setInterval(crearCorazon,500);
+
+</script>
+
+</body>
+</html>
